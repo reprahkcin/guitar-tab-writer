@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moved — Jam Tab Writer</title>
+  <link rel="canonical" href="https://reprahkcin.github.io/jam-tab-writer/" />
+  <style>
+    body {
+      margin: 0; min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      background: #1c1e26; color: #e6e8ef;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      text-align: center; padding: 24px;
+    }
+    a { color: #f0a35e; }
+    p { color: #8b90a3; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <!-- Guitar Tab Writer was renamed to Jam Tab Writer, which moved the GitHub
+       Pages path. Shared song links carry the whole song in the #song= hash, so
+       this forwards the hash along with the visitor and old links (and printed
+       QR codes) keep working. -->
+  <div>
+    <h1>Jam Tab Writer has moved</h1>
+    <p>Sending you to the new address…</p>
+    <p><a id="link" href="https://reprahkcin.github.io/jam-tab-writer/">reprahkcin.github.io/jam-tab-writer/</a></p>
+  </div>
+  <script>
+    (function () {
+      var base = 'https://reprahkcin.github.io/jam-tab-writer/';
+      // location.hash holds the shared song; location.search is unused today but
+      // is carried too so nothing is silently dropped.
+      var target = base + (window.location.search || '') + (window.location.hash || '');
+      document.getElementById('link').href = target;
+      // replace(), not assign(), so Back doesn't bounce between the two sites.
+      window.location.replace(target);
+    })();
+  </script>
+</body>
+</html>
